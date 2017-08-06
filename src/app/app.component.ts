@@ -23,7 +23,7 @@ export class AppComponent implements AfterViewInit {
 
   // Bar charts variables
   countyBarChartScaleX: any;
-  countyDomain: number[] = [1,2,3,4,5];
+  countyDomain: any[] = ['0-799', '800-899', '900-2000'];
   barChartRenderlet: any = function(chart) {
       chart.selectAll('rect')
           .on("click", function(d) {
@@ -86,7 +86,7 @@ export class AppComponent implements AfterViewInit {
 
     this.theUniverse = universe(morley);
     this.theUniverse.then((u) => {
-      this.countyBarChartScaleX = d3.scale.ordinal().domain(this.countyDomain);       
+      this.countyBarChartScaleX = d3.scale.ordinal().domain(this.countyDomain);
       this.universeLoaded = true;
     })
   }

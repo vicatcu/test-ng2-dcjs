@@ -1,12 +1,12 @@
 <div #testacular style="border: thin black solid"></div>
-<div #testy style="border: thin black solid; height: 600px; width: 800px;float: left" *ngIf="universeLoaded">
+<div #testy style="border: thin black solid; height: 600px; width: 1600px;float: left" *ngIf="universeLoaded">
   <bar-chart
       [renderlet]="barChartRenderlet"
       [xScale]="countyBarChartScaleX"
       [xUnits]="'ordinal'"
       [margins]="{top: 20, right: 30, bottom: 80, left: 70}"
       [yLabel]="'Average Speed'"
-      [xLabel]="'Experiment #'"
+      [xLabel]="'Bin'"
       [gap]="15"
       [value]="speedAvgValue">
       <d3-formats></d3-formats>
@@ -14,7 +14,7 @@
           [quantiles]="4">
       </colors>
       <query [dataSource]="theUniverse"
-             [groupBy]="Expt"
+             [groupBy]="'bin'"
              [select]="{
                       speed: {
                           $avg: 'Speed'
