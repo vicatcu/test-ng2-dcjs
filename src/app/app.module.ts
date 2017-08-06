@@ -3,12 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { DcjsModule } from 'ng2-dcjs'
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    DcjsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
